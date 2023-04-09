@@ -1,2 +1,2 @@
 # RegistrationApplication
-Employee Department Application
+Employee Department Registration Postgres Application
