@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 public class EmployeeController {
@@ -18,8 +19,8 @@ public class EmployeeController {
 
     // Employee GET Request :
     @GetMapping("/employee")
-    public Page<Employee> getAllEmployee(Pageable pageable) {
-        return employeeRepository.findAll(pageable);
+    public List<Employee> getAllEmployee() {
+        return employeeRepository.findAll();
     }
 
     // Employee POST Request :

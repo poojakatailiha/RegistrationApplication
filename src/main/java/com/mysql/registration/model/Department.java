@@ -6,6 +6,8 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -17,7 +19,7 @@ public class Department extends AuditModel {
     private Long id;
 
     @NotNull
-    @Lob
+    @Size(max = 50)
     private String departmentname;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

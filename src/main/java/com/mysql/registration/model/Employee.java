@@ -18,11 +18,11 @@ public class Employee extends AuditModel{
     private String employeename;
 
     @NotNull
-    @Size(max = 250)
+    @Size(max = 50)
     private String employeedesignation;
 
     @NotNull
-    @Lob
+    @Size(max=50)
     private String empdata;
 
     //Getter and Setter

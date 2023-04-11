@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 public class DepartmentController {
@@ -22,9 +23,8 @@ public class DepartmentController {
 
     // Department GET Request :
     @GetMapping("/employee/{employeeId}/department")
-    public Page<Department> getAllDepartmentByEmployeeId(@PathVariable (value = "employeeId") Long employeeId,
-                                                Pageable pageable) {
-        return departmentRepository.findByEmployeeId(employeeId, pageable);
+    public List<Department> getAllDepartmentByEmployeeId(@PathVariable (value = "employeeId") Long employeeId) {
+        return departmentRepository.findByEmployeeId(employeeId);
     }
 
     // Department POST Request :
